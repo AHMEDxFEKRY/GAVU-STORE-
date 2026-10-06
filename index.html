@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #080C14;
-            --card-bg: rgba(18, 26, 43, 0.75);
-            --border-color: rgba(0, 210, 255, 0.25);
+            --bg-color: #060911;
+            --card-bg: rgba(15, 23, 42, 0.75);
+            --border-color: rgba(0, 210, 255, 0.2);
             --primary-blue: #00D2FF;
             --secondary-blue: #0072FF;
             --text-color: #FFFFFF;
@@ -28,167 +28,152 @@
         body {
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.15) 0%, transparent 45%),
-                radial-gradient(circle at 90% 80%, rgba(0, 114, 255, 0.15) 0%, transparent 45%);
+                radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(0, 114, 255, 0.1) 0%, transparent 50%);
             background-attachment: fixed;
             color: var(--text-color);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 25px 15px;
+            padding: 20px 15px;
         }
 
         .container {
             width: 100%;
-            max-width: 480px;
+            max-width: 440px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 16px;
         }
 
-        /* Profile Card & Logo Header */
+        /* Profile Header */
         .profile-card {
             background: var(--card-bg);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
-            border-radius: 30px;
-            padding: 32px 22px;
+            border-radius: 28px;
+            padding: 28px 20px 22px;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             position: relative;
-            overflow: hidden;
         }
 
         .logo-wrapper {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 16px;
             position: relative;
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.35);
         }
 
         .logo-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 26px;
-            border: 2px solid var(--primary-blue);
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.4);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .logo-wrapper:hover .logo-img {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 0 35px rgba(0, 210, 255, 0.6);
+            border-radius: 50%;
+            background-color: #000;
+            display: block;
         }
 
         .brand-title {
-            font-size: 34px;
+            font-size: 30px;
             font-weight: 900;
             letter-spacing: 1.5px;
-            background: linear-gradient(135deg, #FFFFFF 30%, var(--primary-blue));
+            background: linear-gradient(135deg, #FFFFFF 40%, var(--primary-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
+            line-height: 1.2;
         }
 
         .brand-subtitle {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--primary-blue);
             font-weight: 800;
             letter-spacing: 1px;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             text-transform: uppercase;
         }
 
         .brand-desc {
-            font-size: 13.5px;
+            font-size: 13px;
             color: var(--text-muted);
             line-height: 1.6;
-            padding: 0 8px;
+            padding: 0 6px;
         }
 
-        /* Action Buttons */
+        /* Unified Action Buttons */
         .actions-list {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
         }
 
         .btn {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 20px;
+            padding: 14px 18px;
             background: var(--card-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--border-color);
-            border-radius: 20px;
+            border-radius: 18px;
             color: var(--text-color);
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
             cursor: pointer;
+            width: 100%;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             border-color: var(--primary-blue);
-            box-shadow: 0 12px 30px rgba(0, 210, 255, 0.3);
-            background: rgba(22, 32, 54, 0.95);
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.25);
+            background: rgba(22, 32, 54, 0.9);
         }
 
         .btn-content {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 14px;
         }
 
         .btn-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 14px;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             color: #fff;
             flex-shrink: 0;
         }
 
-        /* Button Custom Styles */
-        .save-card {
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            border: none;
-            color: #fff;
-            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.35);
-        }
-
-        .save-card:hover {
-            box-shadow: 0 14px 35px rgba(0, 210, 255, 0.5);
-        }
-
-        .save-card .btn-icon {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
+        /* Unified Icon Backgrounds */
+        .save-card .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
         .whatsapp .btn-icon { background: #25D366; }
-        .tiktok .btn-icon { background: #000000; border: 1px solid rgba(255, 255, 255, 0.2); }
         .phone .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
+        .tiktok .btn-icon { background: #000000; border: 1px solid rgba(255, 255, 255, 0.2); }
 
         .arrow-icon {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
             transition: transform 0.3s ease;
         }
 
         .btn:hover .arrow-icon {
-            transform: translateX(-5px);
+            transform: translateX(-4px);
             color: var(--primary-blue);
         }
 
@@ -197,50 +182,50 @@
             background: var(--card-bg);
             backdrop-filter: blur(16px);
             border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 22px 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-radius: 22px;
+            padding: 18px 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
 
         .services-title {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 800;
             color: var(--primary-blue);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 8px;
         }
 
         .service-item {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 16px;
-            padding: 14px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            padding: 12px 8px;
             text-align: center;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 700;
             color: #E2E8F0;
         }
 
         .service-item i {
             display: block;
-            font-size: 22px;
+            font-size: 20px;
             color: var(--primary-blue);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .footer {
             text-align: center;
-            font-size: 12px;
+            font-size: 11.5px;
             color: var(--text-muted);
-            margin-top: 5px;
+            margin-top: 4px;
         }
 
         .footer span {
@@ -253,10 +238,10 @@
 
     <div class="container">
         
-        <!-- Header Profile with Custom Logo -->
+        <!-- Header Profile -->
         <div class="profile-card">
             <div class="logo-wrapper">
-                <img src="https://kommodo.ai/i/UrO8HL31Ai9O6aL8VyXR" alt="Klicko Logo" class="logo-img">
+                <img src="logo.png" alt="Klicko Logo" class="logo-img">
             </div>
             <h1 class="brand-title">KLICKO</h1>
             <div class="brand-subtitle">SMART NFC SOLUTIONS</div>
@@ -276,7 +261,7 @@
                     </div>
                     <span>حفظ الرقم في جهات الاتصال</span>
                 </div>
-                <i class="fa-solid fa-chevron-left arrow-icon" style="color: #fff;"></i>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
             </button>
 
             <!-- WhatsApp -->
@@ -357,17 +342,5 @@ ORG:Klicko Smart Solutions
 TEL;TYPE=CELL,VOICE:01556760265
 URL:https://www.tiktok.com/@klicko.eg
 NOTE:خدمات NFC ذكية لكروت الشغل والمحلات والشركات
-END:VCARD`;
-
-            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.setAttribute('download', 'Klicko_NFC.vcf');
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
-    </script>
-</body>
-</html>
+END:VCARD
+    
