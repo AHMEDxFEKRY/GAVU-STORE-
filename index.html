@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0B0F19;
-            --card-bg: rgba(22, 30, 49, 0.75);
-            --border-color: rgba(0, 210, 255, 0.2);
+            --bg-color: #080C14;
+            --card-bg: rgba(18, 26, 43, 0.75);
+            --border-color: rgba(0, 210, 255, 0.25);
             --primary-blue: #00D2FF;
             --secondary-blue: #0072FF;
             --text-color: #FFFFFF;
@@ -28,8 +28,8 @@
         body {
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(circle at 15% 15%, rgba(0, 210, 255, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 85% 85%, rgba(0, 114, 255, 0.12) 0%, transparent 40%);
+                radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 90% 80%, rgba(0, 114, 255, 0.15) 0%, transparent 45%);
             background-attachment: fixed;
             color: var(--text-color);
             min-height: 100vh;
@@ -48,74 +48,66 @@
             gap: 20px;
         }
 
-        /* Header / Profile Card */
+        /* Profile Card & Logo Header */
         .profile-card {
             background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
-            border-radius: 28px;
-            padding: 30px 20px;
+            border-radius: 30px;
+            padding: 32px 22px;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
             position: relative;
             overflow: hidden;
         }
 
-        .profile-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0,210,255,0.08) 0%, transparent 70%);
-            pointer-events: none;
+        .logo-wrapper {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
         }
 
-        .logo-box {
-            width: 95px;
-            height: 95px;
-            margin: 0 auto 18px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.35);
-            font-size: 42px;
-            color: #fff;
-            transform: rotate(-3deg);
-            transition: transform 0.3s ease;
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 26px;
+            border: 2px solid var(--primary-blue);
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .logo-box:hover {
-            transform: rotate(0deg) scale(1.05);
+        .logo-wrapper:hover .logo-img {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 0 35px rgba(0, 210, 255, 0.6);
         }
 
         .brand-title {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 900;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             background: linear-gradient(135deg, #FFFFFF 30%, var(--primary-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .brand-subtitle {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--primary-blue);
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
         }
 
         .brand-desc {
-            font-size: 13px;
+            font-size: 13.5px;
             color: var(--text-muted);
             line-height: 1.6;
-            padding: 0 10px;
+            padding: 0 8px;
         }
 
         /* Action Buttons */
@@ -140,15 +132,15 @@
             font-size: 16px;
             font-weight: 700;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
             cursor: pointer;
         }
 
         .btn:hover {
             transform: translateY(-3px);
             border-color: var(--primary-blue);
-            box-shadow: 0 12px 30px rgba(0, 210, 255, 0.25);
-            background: rgba(22, 30, 49, 0.9);
+            box-shadow: 0 12px 30px rgba(0, 210, 255, 0.3);
+            background: rgba(22, 32, 54, 0.95);
         }
 
         .btn-content {
@@ -161,158 +153,8 @@
             width: 44px;
             height: 44px;
             border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #fff;
-            flex-shrink: 0;
-        }
-
-        /* Custom Button Colors */
-        .save-card {
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            border: none;
-            color: #fff;
-            margin-bottom: 5px;
-            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.3);
-        }
-
-        .save-card:hover {
-            box-shadow: 0 14px 35px rgba(0, 210, 255, 0.45);
-        }
-
-        .save-card .btn-icon {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .whatsapp .btn-icon { background: #25D366; }
-        .tiktok .btn-icon { background: #000000; border: 1px solid rgba(255,255,255,0.2); }
-        .phone .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
-
-        .arrow-icon {
-            font-size: 14px;
-            color: var(--text-muted);
-            transition: transform 0.3s ease;
-        }
-
-        .btn:hover .arrow-icon {
-            transform: translateX(-5px);
-            color: var(--primary-blue);
-        }
-
-        /* Services Section */
-        .services-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 22px 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-        }
-
-        .services-title {
-            font-size: 16px;
-            font-weight: 800;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .service-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 14px;
-            padding: 12px;
-            text-align: center;
-            font-size: 13px;
-            font-weight: 600;
-            color: #E2E8F0;
-        }
-
-        .service-item i {
-            display: block;
-            font-size: 20px;
-            color: var(--primary-blue);
-            margin-bottom: 6px;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 10px;
-        }
-
-        .footer span {
-            color: var(--primary-blue);
-            font-weight: 700;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        
-        <!-- Header Profile -->
-        <div class="profile-card">
-            <div class="logo-box">
-                <i class="fa-solid fa-wifi"></i>
-            </div>
-            <h1 class="brand-title">KLICKO</h1>
-            <div class="brand-subtitle">SMART NFC SOLUTIONS</div>
-            <p class="brand-desc">
-                بنحوّل كروت المحلات والشركات لربط ذكي بلمسة واحدة | كروت NFC، ستاندات أكريليك للمنيو وتقييمات جوجل، وصفحات هبوط احترافية.
-            </p>
-        </div>
-
-        <!-- Links & Action Buttons -->
-        <div class="actions-list">
-            
-            <!-- Save Contact Button -->
-            <button class="btn save-card" onclick="downloadVCard()">
-                <div class="btn-content">
-                    <div class="btn-icon">
-                        <i class="fa-solid fa-user-plus"></i>
-                    </div>
-                    <span>حفظ الرقم في جهات الاتصال</span>
-                </div>
-                <i class="fa-solid fa-chevron-left arrow-icon" style="color: #fff;"></i>
-            </button>
-
-            <!-- WhatsApp -->
-            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%83%D8%B1%D9%88%D8%AA%20%D9%88%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D9%80%20NFC" target="_blank" class="btn whatsapp">
-                <div class="btn-content">
-                    <div class="btn-icon">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-                    <span>تواصل معنا على واتساب</span>
-                </div>
-                <i class="fa-solid fa-chevron-left arrow-icon"></i>
-            </a>
-
-            <!-- Direct Call -->
-            <a href="tel:01556760265" class="btn phone">
-                <div class="btn-content">
-                    <div class="btn-icon">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-                    <span>اتصال تلفوني مباشر</span>
-                </div>
-                <i class="fa-solid fa-chevron-left arrow-icon"></i>
-            </a>
-
-            <!-- TikTok -->
-            <a href="https://www.tiktok.com/@klicko.eg" target="_blank" class="btn tiktok">
+            display:
+tiktok.com/@klicko.eg" target="_blank" class="btn tiktok">
                 <div class="btn-content">
                     <div class="btn-icon">
                         <i class="fa-brands fa-tiktok"></i>
