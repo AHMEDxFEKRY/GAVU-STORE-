@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klicko | كليكو - حلول NFC الذكية</title>
+    <title>Klicko | كليكو - حلول NFC والمنيو الذكي</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #070A13;
+            --bg-color: #060911;
             --card-bg: rgba(15, 23, 42, 0.85);
-            --border-color: rgba(0, 210, 255, 0.3);
+            --border-color: rgba(0, 210, 255, 0.25);
             --primary-blue: #00D2FF;
             --secondary-blue: #0072FF;
             --text-color: #FFFFFF;
@@ -28,8 +28,8 @@
         body {
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.18) 0%, transparent 60%),
-                radial-gradient(circle at 50% 100%, rgba(0, 114, 255, 0.12) 0%, transparent 60%);
+                radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 50% 100%, rgba(0, 114, 255, 0.1) 0%, transparent 60%);
             background-attachment: fixed;
             color: var(--text-color);
             min-height: 100vh;
@@ -42,7 +42,7 @@
 
         .container {
             width: 100%;
-            max-width: 430px;
+            max-width: 440px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -55,7 +55,7 @@
             width: 100%;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 26px;
+            border-radius: 28px;
             padding: 26px 18px 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
             display: flex;
@@ -107,20 +107,7 @@
             line-height: 1.5;
         }
 
-        /* Section Title */
-        .section-header {
-            width: 100%;
-            text-align: right;
-            font-size: 13.5px;
-            font-weight: 800;
-            color: var(--primary-blue);
-            margin-top: 4px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Action Buttons & Services */
+        /* Main Contact Buttons */
         .actions-list {
             width: 100%;
             display: flex;
@@ -146,7 +133,7 @@
             width: 100%;
         }
 
-        .btn:active, .btn:hover {
+        .btn:hover {
             transform: translateY(-2px);
             border-color: var(--primary-blue);
             background: rgba(22, 32, 54, 0.95);
@@ -170,21 +157,136 @@
             flex-shrink: 0;
         }
 
-        /* Custom Colors */
         .btn-save .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
         .btn-wa .btn-icon { background: #25D366; }
         .btn-call .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
         .btn-tiktok .btn-icon { background: #000; border: 1px solid rgba(255,255,255,0.2); }
-        
-        .btn-order {
-            border-color: rgba(37, 211, 102, 0.3);
-            background: rgba(15, 23, 42, 0.9);
-        }
-        .btn-order .btn-icon { background: #25D366; }
 
         .arrow-icon {
             font-size: 12px;
             color: var(--text-muted);
+        }
+
+        /* Packages Section Header */
+        .section-header {
+            width: 100%;
+            text-align: right;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Package Cards Layout */
+        .packages-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .pkg-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 16px;
+            text-align: right;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+            position: relative;
+        }
+
+        .pkg-card.vip-card {
+            border: 1.5px solid var(--primary-blue);
+            background: linear-gradient(180deg, rgba(0, 210, 255, 0.08) 0%, rgba(15, 23, 42, 0.9) 100%);
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.2);
+        }
+
+        .vip-badge {
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: #fff;
+            font-size: 10px;
+            font-weight: 900;
+            padding: 3px 10px;
+            border-radius: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .pkg-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .pkg-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pkg-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: rgba(0, 210, 255, 0.1);
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .pkg-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #FFF;
+        }
+
+        .pkg-details {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .pkg-details li {
+            position: relative;
+            padding-right: 18px;
+            margin-bottom: 4px;
+        }
+
+        .pkg-details li::before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        .pkg-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
         }
 
         /* Footer */
@@ -192,7 +294,7 @@
             text-align: center;
             font-size: 11px;
             color: var(--text-muted);
-            margin-top: 6px;
+            margin-top: 8px;
         }
 
         .footer span {
@@ -205,7 +307,7 @@
 
     <div class="container">
         
-        <!-- Header Profile -->
+        <!-- Profile Header -->
         <div class="profile-card">
             <div class="logo-wrapper">
                 <img src="file_000000004e8881f48296dedee38d66b7.png" alt="Klicko Logo" class="logo-img" onerror="this.style.display='none'">
@@ -213,11 +315,11 @@
             <h1 class="brand-title">KLICKO</h1>
             <div class="brand-subtitle">SMART NFC SOLUTIONS</div>
             <p class="brand-desc">
-                ربط ذكي بلمسة واحدة | كروت NFC للمحلات والشركات، ستاندات المنيو، تقييمات Google، وصفحات هبوط احترافية.
+                ربط ذكي بلمسة واحدة | كروت وستاندات NFC للمحلات، المنيو الذكي بتصميم خاص، وتقييمات Google.
             </p>
         </div>
 
-        <!-- Contact Links -->
+        <!-- Main Contact Links -->
         <div class="actions-list">
             
             <button class="btn btn-save" onclick="downloadVCard()">
@@ -228,7 +330,7 @@
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
             </button>
 
-            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D9%80%20NFC" target="_blank" class="btn btn-wa">
+            <a href="https://wa.me/201556760265?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85" target="_blank" class="btn btn-wa">
                 <div class="btn-content">
                     <div class="btn-icon"><i class="fa-brands fa-whatsapp"></i></div>
                     <span>تواصل مباشر على الواتساب</span>
@@ -254,49 +356,82 @@
 
         </div>
 
-        <!-- Services Orders Section -->
+        <!-- Packages Section Header -->
         <div class="section-header">
-            <i class="fa-solid fa-bolt"></i>
-            <span>طلب خدمات Klicko المباشرة:</span>
+            <i class="fa-solid fa-box-open"></i>
+            <span>باكيجات وخدمات Klicko المتاحة:</span>
         </div>
 
-        <div class="actions-list">
+        <!-- Detailed Packages List -->
+        <div class="packages-list">
             
-            <!-- Google Review Stand -->
-            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%20%F0%9F%90%8B%0A%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%2A%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%20%D8%AA%D9%82%D9%8A%D9%8A%D9%85%D8%A7%D8%AA%20%D8%AC%D9%88%D8%AC%D9%84%20%28Google%20Reviews%20NFC%29%2A%0A%0A%F0%9F%93%8D%20%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%85%D8%AD%D9%84%2F%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%3A%20%0A%F0%9F%93%9E%20%D8%B1%D9%82%D9%85%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%3A%20" target="_blank" class="btn btn-order">
-                <div class="btn-content">
-                    <div class="btn-icon"><i class="fa-solid fa-star"></i></div>
-                    <span>طلب ستاند تقييمات جوجل NFC</span>
+            <!-- 1. VIP Full Branding Package -->
+            <div class="pkg-card vip-card">
+                <div class="vip-badge">الأكثر طلباً ⭐</div>
+                <div class="pkg-header">
+                    <div class="pkg-icon"><i class="fa-solid fa-crown"></i></div>
+                    <div class="pkg-title">باكيج الهوية الرقمية الكاملة (VIP)</div>
                 </div>
-                <i class="fa-solid fa-chevron-left arrow-icon"></i>
-            </a>
+                <ul class="pkg-details">
+                    <li>كارت NFC ذكي بتصميم خاص ومستقل لمحلّك/شركتك.</li>
+                    <li>ستاند أكريليك فاخر ومقاوم للمياه للطاولة أو الكونتر.</li>
+                    <li>صفحة هبوط مخصصة تضم المنيو، اللوكيشن، الواتساب، وكل اللينكات.</li>
+                    <li>ربط وبرمجة الشرايح وتحديث البيانات بسهولة في أي وقت.</li>
+                </ul>
+                <a href="https://wa.me/201556760265?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A2%20%2A%D8%A8%D8%A7%D9%83%D9%8A%D8%AC%20%D8%A7%D9%84%D9%87%D9%88%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D9%83%D8%A7%D9%85%D9%84%D8%A9%20%28VIP%29%2A%0A%0A%F0%9F%93%8D%20%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%85%D8%AD%D9%84%2F%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%3A%20" target="_blank" class="pkg-btn">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    طلب باكيج الهوية الكاملة (VIP)
+                </a>
+            </div>
 
-            <!-- Menu Stand + Landing Page -->
-            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%20%F0%9F%90%8B%0A%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%2A%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%20%D8%A7%D9%84%D9%85%D9%86%D9%8A%D9%88%20%2B%20%D8%B5%D9%81%D8%AD%D8%A9%20%D9%87%D8%A8%D9%88%D8%B7%20%28NFC%20Menu%29%2A%0A%0A%F0%9F%93%8D%20%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%85%D8%B7%D8%B9%D9%85%2F%D8%A7%D9%84%D9%83%D8%A7%D1%81%D9%8A%D9%87%3A%20%0A%F0%9F%93%9E%20%D8%B1%D9%82%D9%85%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%3A%20" target="_blank" class="btn btn-order">
-                <div class="btn-content">
-                    <div class="btn-icon"><i class="fa-solid fa-qrcode"></i></div>
-                    <span>طلب ستاند المنيو + صفحة هبوط</span>
+            <!-- 2. Smart Menu System -->
+            <div class="pkg-card">
+                <div class="pkg-header">
+                    <div class="pkg-icon"><i class="fa-solid fa-qrcode"></i></div>
+                    <div class="pkg-title">منظومة المنيو الذكي (كارت/ستاند + صفحة)</div>
                 </div>
-                <i class="fa-solid fa-chevron-left arrow-icon"></i>
-            </a>
+                <ul class="pkg-details">
+                    <li>ستاند أو كارت NFC أكريليك فخم مخصص للطاولات.</li>
+                    <li>تصميم صفحة المنيو بالكامل متناسقة مع ألوان المحل.</li>
+                    <li>عرض وجباتك وأسعارك مع إمكانية التحديث المباشر.</li>
+                </ul>
+                <a href="https://wa.me/201556760265?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A2%20%2A%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%8A%D9%88%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A%2A%0A%0A%F0%9F%93%8D%20%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%85%D8%B7%D8%B9%D9%85%2F%D8%A7%D9%84%D9%83%D8%A7%D1%81%D9%8A%D9%87%3A%20" target="_blank" class="pkg-btn">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    طلب منظومة المنيو الذكي
+                </a>
+            </div>
 
-            <!-- Personal / Business NFC Cards -->
-            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%20%F0%9F%90%8B%0A%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%2A%D9%83%D8%B1%D9%88%D8%AA%20NFC%20%D8%B4%D8%AE%D8%B5%D9%8A%D8%A9%20%2F%20%D9%84%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA%2A%0A%0A%F0%9F%93%8D%20%D8%A7%D8%B3%D9%85%D9%8A%2F%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A9%3A%20%0A%F0%9F%93%9E%20%D8%B1%D9%82%D9%85%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%3A%20" target="_blank" class="btn btn-order">
-                <div class="btn-content">
-                    <div class="btn-icon"><i class="fa-solid fa-id-card"></i></div>
-                    <span>طلب كروت NFC للأفراد والشركات</span>
+            <!-- 3. Google Reviews Stand -->
+            <div class="pkg-card">
+                <div class="pkg-header">
+                    <div class="pkg-icon"><i class="fa-solid fa-star"></i></div>
+                    <div class="pkg-title">كارت / ستاند تقييمات جوجل (Google Reviews)</div>
                 </div>
-                <i class="fa-solid fa-chevron-left arrow-icon"></i>
-            </a>
+                <ul class="pkg-details">
+                    <li>كارت أو ستاند أكريليك للكونتر لتقييم المحل بلمسة واحدة.</li>
+                    <li>يفتح صفحة التقييم على Google فوراً لمضاعفة تقييماتك.</li>
+                </ul>
+                <a href="https://wa.me/201556760265?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A2%20%2A%D9%83%D8%A7%D8%B1%D8%AA%20%D8%AA%D9%82%D9%8A%D9%8A%D9%85%D8%A7%D8%AA%20%D8%AC%D9%88%D8%AC%D9%84%2A%0A%0A%F0%9F%93%8D%20%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%85%D8%AD%D9%84%2F%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%3A%20" target="_blank" class="pkg-btn">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    طلب كارت تقييمات جوجل
+                </a>
+            </div>
 
-            <!-- Custom Landing Page -->
-            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%20%F0%9F%90%8B%0A%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%2A%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%B5%D9%81%D8%AD%D8%A9%20%D9%87%D8%A8%D9%88%D8%B7%20%D8%AE%D8%A7%D8%B5%D8%A9%20%D9%84%D9%84%D9%85%D8%AD%D9%84%2A%0A%0A%F0%9F%93%8D%20%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%3A%20%0A%F0%9F%93%9E%20%D8%B1%D9%82%D9%85%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%3A%20" target="_blank" class="btn btn-order">
-                <div class="btn-content">
-                    <div class="btn-icon"><i class="fa-solid fa-globe"></i></div>
-                    <span>تصميم صفحة هبوط خاصة للمحل</span>
+            <!-- 4. Personal & Business NFC Cards -->
+            <div class="pkg-card">
+                <div class="pkg-header">
+                    <div class="pkg-icon"><i class="fa-solid fa-id-card"></i></div>
+                    <div class="pkg-title">كروت NFC الذكية (للأفراد والشركات)</div>
                 </div>
-                <i class="fa-solid fa-chevron-left arrow-icon"></i>
-            </a>
+                <ul class="pkg-details">
+                    <li>كارت عمل شخصي أو تجاري مطبوع بطباعة فاخرة باللوجو.</li>
+                    <li>حفظ جهات الاتصال وروابط السوشيال بلمسة واحدة.</li>
+                </ul>
+                <a href="https://wa.me/201556760265?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A2%20%2A%D9%83%D8%B1%D9%88%D8%AA%20NFC%20%D8%B0%D9%83%D9%8A%D8%A9%2A%0A%0A%F0%9F%93%8D%20%D8%A7%D8%B3%D9%85%D9%8A%2F%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A9%3A%20" target="_blank" class="pkg-btn">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    طلب كروت NFC الذكية
+                </a>
+            </div>
 
         </div>
 
@@ -312,11 +447,11 @@
         function downloadVCard() {
             const vcardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Klicko | كروت NFC ذكية
+FN:Klicko | كروت NFC والمنيو الذكي
 ORG:Klicko Smart Solutions
 TEL;TYPE=CELL,VOICE:01556760265
 URL:https://www.tiktok.com/@klicko.eg
-NOTE:خدمات NFC ذكية لكروت الشغل والمحلات والشركات
+NOTE:خدمات NFC والمنيو الذكي لكروت الشغل والمحلات والشركات
 END:VCARD`;
 
             const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
@@ -330,5 +465,5 @@ END:VCARD`;
         }
     </script>
 </body>
-                </html>
-                
+    </html>
+    
