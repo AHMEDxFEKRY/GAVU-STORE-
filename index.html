@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klicko | كليكو - كروت وخدمات NFC الذكية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Klicko | كليكو - حلول NFC الذكية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #060911;
-            --card-bg: rgba(15, 23, 42, 0.8);
-            --border-color: rgba(0, 210, 255, 0.25);
+            --bg-color: #070A13;
+            --card-bg: rgba(15, 23, 42, 0.85);
+            --border-color: rgba(0, 210, 255, 0.3);
             --primary-blue: #00D2FF;
             --secondary-blue: #0072FF;
             --text-color: #FFFFFF;
@@ -28,8 +28,8 @@
         body {
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 50% 100%, rgba(0, 114, 255, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.18) 0%, transparent 60%),
+                radial-gradient(circle at 50% 100%, rgba(0, 114, 255, 0.12) 0%, transparent 60%);
             background-attachment: fixed;
             color: var(--text-color);
             min-height: 100vh;
@@ -42,7 +42,7 @@
 
         .container {
             width: 100%;
-            max-width: 440px;
+            max-width: 430px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -54,26 +54,23 @@
         .profile-card {
             width: 100%;
             background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
-            border-radius: 28px;
-            padding: 28px 20px 22px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            border-radius: 26px;
+            padding: 26px 18px 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .logo-wrapper {
-            width: 110px;
-            height: 110px;
-            margin-bottom: 14px;
-            position: relative;
+            width: 105px;
+            height: 105px;
+            margin-bottom: 12px;
             border-radius: 50%;
             padding: 3px;
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
         }
 
         .logo-img {
@@ -86,212 +83,252 @@
         }
 
         .brand-title {
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 900;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             background: linear-gradient(135deg, #FFFFFF 40%, var(--primary-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 2px;
-            line-height: 1.2;
         }
 
         .brand-subtitle {
-            font-size: 12px;
+            font-size: 11.5px;
             color: var(--primary-blue);
             font-weight: 800;
             letter-spacing: 1px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
 
         .brand-desc {
-            font-size: 13px;
+            font-size: 12.5px;
             color: var(--text-muted);
-            line-height: 1.6;
-            padding: 0 6px;
+            line-height: 1.5;
         }
 
-        /* Action Buttons */
+        /* Section Title */
+        .section-header {
+            width: 100%;
+            text-align: right;
+            font-size: 13.5px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Action Buttons & Services */
         .actions-list {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 11px;
         }
 
         .btn {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 18px;
+            padding: 13px 16px;
             background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--border-color);
             border-radius: 18px;
             color: var(--text-color);
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14.5px;
             font-weight: 700;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
             cursor: pointer;
             width: 100%;
         }
 
-        .btn:hover {
+        .btn:active, .btn:hover {
             transform: translateY(-2px);
             border-color: var(--primary-blue);
-            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.25);
-            background: rgba(22, 32, 54, 0.9);
+            background: rgba(22, 32, 54, 0.95);
         }
 
         .btn-content {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
         }
 
         .btn-icon {
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 17px;
             color: #fff;
             flex-shrink: 0;
         }
 
-        .save-card .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
-        .whatsapp .btn-icon { background: #25D366; }
-        .phone .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
-        .tiktok .btn-icon { background: #000000; border: 1px solid rgba(255, 255, 255, 0.2); }
+        /* Custom Colors */
+        .btn-save .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
+        .btn-wa .btn-icon { background: #25D366; }
+        .btn-call .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
+        .btn-tiktok .btn-icon { background: #000; border: 1px solid rgba(255,255,255,0.2); }
+        
+        .btn-order {
+            border-color: rgba(37, 211, 102, 0.3);
+            background: rgba(15, 23, 42, 0.9);
+        }
+        .btn-order .btn-icon { background: #25D366; }
 
         .arrow-icon {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-muted);
-            transition: transform 0.3s ease;
         }
 
-        .btn:hover .arrow-icon {
-            transform: translateX(-4px);
-            color: var(--primary-blue);
-        }
-
-        /* Interactive Services Grid */
-        .services-card {
-            width: 100%;
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border-color);
-            border-radius: 22px;
-            padding: 18px 16px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .services-title {
-            font-size: 14px;
-            font-weight: 800;
-            color: var(--primary-blue);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .service-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 16px;
-            padding: 14px 10px;
-            text-align: center;
-            font-size: 13px;
-            font-weight: 700;
-            color: #E2E8F0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .service-item:hover {
-            border-color: var(--primary-blue);
-            background: rgba(0, 210, 255, 0.08);
-            transform: translateY(-3px);
-        }
-
-        .service-item i {
-            display: block;
-            font-size: 22px;
-            color: var(--primary-blue);
-            margin-bottom: 8px;
-        }
-
+        /* Footer */
         .footer {
             text-align: center;
-            font-size: 11.5px;
+            font-size: 11px;
             color: var(--text-muted);
-            margin-top: 4px;
+            margin-top: 6px;
         }
 
         .footer span {
             color: var(--primary-blue);
             font-weight: 800;
         }
+    </style>
+</head>
+<body>
 
-        /* Modal Box */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            padding: 20px;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .modal-box {
-            background: #0F172A;
-            border: 1px solid var(--primary-blue);
-            border-radius: 24px;
-            padding: 24px;
-            width: 100%;
-            max-width: 400px;
-            box-shadow: 0 20px 50px rgba(0, 210, 255, 0.25);
-            position: relative;
-            text-align: right;
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-        }
-
-        .modal-overlay.active .modal-box {
-            transform: translateY(0);
-        }
-
-        .modal-close {
+    <div class="container">
         
+        <!-- Header Profile -->
+        <div class="profile-card">
+            <div class="logo-wrapper">
+                <img src="file_000000004e8881f48296dedee38d66b7.png" alt="Klicko Logo" class="logo-img" onerror="this.style.display='none'">
+            </div>
+            <h1 class="brand-title">KLICKO</h1>
+            <div class="brand-subtitle">SMART NFC SOLUTIONS</div>
+            <p class="brand-desc">
+                ربط ذكي بلمسة واحدة | كروت NFC للمحلات والشركات، ستاندات المنيو، تقييمات Google، وصفحات هبوط احترافية.
+            </p>
+        </div>
+
+        <!-- Contact Links -->
+        <div class="actions-list">
+            
+            <button class="btn btn-save" onclick="downloadVCard()">
+                <div class="btn-content">
+                    <div class="btn-icon"><i class="fa-solid fa-user-plus"></i></div>
+                    <span>حفظ الرقم في جهات الاتصال</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </button>
+
+            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D9%80%20NFC" target="_blank" class="btn btn-wa">
+                <div class="btn-content">
+                    <div class="btn-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <span>تواصل مباشر على الواتساب</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="tel:01556760265" class="btn btn-call">
+                <div class="btn-content">
+                    <div class="btn-icon"><i class="fa-solid fa-phone"></i></div>
+                    <span>اتصال تلفوني مباشر</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@klicko.eg" target="_blank" class="btn btn-tiktok">
+                <div class="btn-content">
+                    <div class="btn-icon"><i class="fa-brands fa-tiktok"></i></div>
+                    <span>تابع أعمالنا على TikTok</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+        </div>
+
+        <!-- Services Orders Section -->
+        <div class="section-header">
+            <i class="fa-solid fa-bolt"></i>
+            <span>طلب خدمات Klicko المباشرة:</span>
+        </div>
+
+        <div class="actions-list">
+            
+            <!-- Google Review Stand -->
+            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%20%F0%9F%90%8B%0A%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%2A%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%20%D8%AA%D9%82%D9%8A%D9%8A%D9%85%D8%A7%D8%AA%20%D8%AC%D9%88%D8%AC%D9%84%20%28Google%20Reviews%20NFC%29%2A%0A%0A%F0%9F%93%8D%20%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%85%D8%AD%D9%84%2F%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%3A%20%0A%F0%9F%93%9E%20%D8%B1%D9%82%D9%85%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%3A%20" target="_blank" class="btn btn-order">
+                <div class="btn-content">
+                    <div class="btn-icon"><i class="fa-solid fa-star"></i></div>
+                    <span>طلب ستاند تقييمات جوجل NFC</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- Menu Stand + Landing Page -->
+            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%20%F0%9F%90%8B%0A%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%2A%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%20%D8%A7%D9%84%D9%85%D9%86%D9%8A%D9%88%20%2B%20%D8%B5%D9%81%D8%AD%D8%A9%20%D9%87%D8%A8%D9%88%D8%B7%20%28NFC%20Menu%29%2A%0A%0A%F0%9F%93%8D%20%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%85%D8%B7%D8%B9%D9%85%2F%D8%A7%D9%84%D9%83%D8%A7%D1%81%D9%8A%D9%87%3A%20%0A%F0%9F%93%9E%20%D8%B1%D9%82%D9%85%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%3A%20" target="_blank" class="btn btn-order">
+                <div class="btn-content">
+                    <div class="btn-icon"><i class="fa-solid fa-qrcode"></i></div>
+                    <span>طلب ستاند المنيو + صفحة هبوط</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- Personal / Business NFC Cards -->
+            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%20%F0%9F%90%8B%0A%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%2A%D9%83%D8%B1%D9%88%D8%AA%20NFC%20%D8%B4%D8%AE%D8%B5%D9%8A%D8%A9%20%2F%20%D9%84%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA%2A%0A%0A%F0%9F%93%8D%20%D8%A7%D8%B3%D9%85%D9%8A%2F%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A9%3A%20%0A%F0%9F%93%9E%20%D8%B1%D9%82%D9%85%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%3A%20" target="_blank" class="btn btn-order">
+                <div class="btn-content">
+                    <div class="btn-icon"><i class="fa-solid fa-id-card"></i></div>
+                    <span>طلب كروت NFC للأفراد والشركات</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- Custom Landing Page -->
+            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%20%F0%9F%90%8B%0A%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%2A%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%B5%D9%81%D8%AD%D8%A9%20%D9%87%D8%A8%D9%88%D8%B7%20%D8%AE%D8%A7%D8%B5%D8%A9%20%D9%84%D9%84%D9%85%D8%AD%D9%84%2A%0A%0A%F0%9F%93%8D%20%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%3A%20%0A%F0%9F%93%9E%20%D8%B1%D9%82%D9%85%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%3A%20" target="_blank" class="btn btn-order">
+                <div class="btn-content">
+                    <div class="btn-icon"><i class="fa-solid fa-globe"></i></div>
+                    <span>تصميم صفحة هبوط خاصة للمحل</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            جميع الحقوق محفوظة &copy; 2026 <span>KLICKO</span>
+        </div>
+
+    </div>
+
+    <!-- Script for VCard Generation -->
+    <script>
+        function downloadVCard() {
+            const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Klicko | كروت NFC ذكية
+ORG:Klicko Smart Solutions
+TEL;TYPE=CELL,VOICE:01556760265
+URL:https://www.tiktok.com/@klicko.eg
+NOTE:خدمات NFC ذكية لكروت الشغل والمحلات والشركات
+END:VCARD`;
+
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.setAttribute('download', 'Klicko_NFC.vcf');
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+                </html>
+                
