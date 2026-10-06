@@ -3,78 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAVU STORE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <title>Klicko | كليكو - كروت وخدمات NFC الذكية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
-        body { background-color: #f4f5f7; color: #1a1a1a; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-        .card-container { width: 100%; max-width: 380px; text-align: center; background: #ffffff; border: 2px solid #e2d1a3; border-radius: 24px; padding: 35px 22px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07); }
-        .logo-box { margin-bottom: 25px; }
-        .logo-title { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 700; color: #b8860b; letter-spacing: 2px; margin-bottom: 4px; text-transform: uppercase; }
-        .subtitle { font-size: 12px; color: #777777; letter-spacing: 2px; font-weight: 600; text-transform: uppercase; }
-        .divider { height: 1px; background: linear-gradient(90deg, transparent, #b8860b, transparent); margin: 20px 0 25px 0; }
-        .links-wrapper { display: flex; flex-direction: column; gap: 14px; }
-        .btn { display: flex; align-items: center; justify-content: flex-start; padding: 14px 20px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.25s ease; border: 1px solid #e8e8e8; background: #ffffff; color: #222222; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
-        .btn i { font-size: 22px; width: 35px; text-align: center; margin-left: 10px; }
-        .btn:active, .btn:hover { transform: translateY(-2px); border-color: #b8860b; box-shadow: 0 6px 15px rgba(184, 134, 11, 0.15); }
-        .btn-call { background: linear-gradient(135deg, #d4af37, #b8860b); color: #ffffff !important; border: none; justify-content: center; }
-        .btn-call i { color: #ffffff !important; margin-left: 5px; }
-        .btn-whatsapp i { color: #25D366; }
-        .btn-save i { color: #b8860b; }
-        .btn-instagram i { color: #E1306C; }
-        .btn-tiktok i { color: #000000; }
-        .btn-facebook i { color: #1877F2; }
-        .footer { margin-top: 30px; font-size: 11px; color: #aaa; font-weight: 600; letter-spacing: 1px; }
+        :root {
+            --bg-color: #0B0F19;
+            --card-bg: rgba(22, 30, 49, 0.75);
+            --border-color: rgba(0, 210, 255, 0.2);
+            --primary-blue: #00D2FF;
+            --secondary-blue: #0072FF;
+            --text-color: #FFFFFF;
+            --text-muted: #94A3B8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 210, 255, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(0, 114, 255, 0.12) 0%, transparent 40%);
+            background-attachment: fixed;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Header / Profile Card */
+        .profile-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0,210,255,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .logo-box {
+            width: 95px;
+            height: 95px;
+            margin: 0 auto 18px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.35);
+            font-size: 42px;
+            color: #fff;
+            transform: rotate(-3deg);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-box:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .brand-title {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #FFFFFF 30%, var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+
+        .brand-subtitle {
+            font-size: 14px;
+            color: var(--primary-blue);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .brand-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+
+        /* Action Buttons */
+        .actions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 12px 30px rgba(0, 210, 255, 0.25);
+            background: rgba(22, 30, 49, 0.9);
+        }
+
+        .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        /* Custom Button Colors */
+        .save-card {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border: none;
+            color: #fff;
+            margin-bottom: 5px;
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.3);
+        }
+
+        .save-card:hover {
+            box-shadow: 0 14px 35px rgba(0, 210, 255, 0.45);
+        }
+
+        .save-card .btn-icon {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .whatsapp .btn-icon { background: #25D366; }
+        .tiktok .btn-icon { background: #000000; border: 1px solid rgba(255,255,255,0.2); }
+        .phone .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
+
+        .arrow-icon {
+            font-size: 14px;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover .arrow-icon {
+            transform: translateX(-5px);
+            color: var(--primary-blue);
+        }
+
+        /* Services Section */
+        .services-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 22px 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .services-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            padding: 12px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: #E2E8F0;
+        }
+
+        .service-item i {
+            display: block;
+            font-size: 20px;
+            color: var(--primary-blue);
+            margin-bottom: 6px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .footer span {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
 
-<div class="card-container">
-    <div class="logo-box">
-        <h1 class="logo-title">GAVU STORE</h1>
-        <p class="subtitle">CLOTHING & SNEAKERS</p>
+    <div class="container">
+        
+        <!-- Header Profile -->
+        <div class="profile-card">
+            <div class="logo-box">
+                <i class="fa-solid fa-wifi"></i>
+            </div>
+            <h1 class="brand-title">KLICKO</h1>
+            <div class="brand-subtitle">SMART NFC SOLUTIONS</div>
+            <p class="brand-desc">
+                بنحوّل كروت المحلات والشركات لربط ذكي بلمسة واحدة | كروت NFC، ستاندات أكريليك للمنيو وتقييمات جوجل، وصفحات هبوط احترافية.
+            </p>
+        </div>
+
+        <!-- Links & Action Buttons -->
+        <div class="actions-list">
+            
+            <!-- Save Contact Button -->
+            <button class="btn save-card" onclick="downloadVCard()">
+                <div class="btn-content">
+                    <div class="btn-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <span>حفظ الرقم في جهات الاتصال</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon" style="color: #fff;"></i>
+            </button>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%83%D8%B1%D9%88%D8%AA%20%D9%88%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D9%80%20NFC" target="_blank" class="btn whatsapp">
+                <div class="btn-content">
+                    <div class="btn-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <span>تواصل معنا على واتساب</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- Direct Call -->
+            <a href="tel:01556760265" class="btn phone">
+                <div class="btn-content">
+                    <div class="btn-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span>اتصال تلفوني مباشر</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@klicko.eg" target="_blank" class="btn tiktok">
+                <div class="btn-content">
+                    <div class="btn-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <span>تابع أعمالنا على TikTok</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+        </div>
+
+        <!-- Services Highlight -->
+        <div class="services-card">
+            <div class="services-title">
+                <i class="fa-solid fa-bolt"></i>
+                <span>خدمات Klicko للمحلات والشركات</span>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fa-solid fa-id-card"></i>
+                    كروت NFC ذكية
+                </div>
+                <div class="service-item">
+                    <i class="fa-solid fa-qrcode"></i>
+                    ستاندات المنيو
+                </div>
+                <div class="service-item">
+                    <i class="fa-solid fa-star"></i>
+                    تقييمات Google
+                </div>
+                <div class="service-item">
+                    <i class="fa-solid fa-globe"></i>
+                    صفحات هبوط
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            جميع الحقوق محفوظة &copy; 2026 <span>KLICKO</span>
+        </div>
+
     </div>
 
-    <div class="divider"></div>
+    <!-- Script for VCard Generation -->
+    <script>
+        function downloadVCard() {
+            const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Klicko | كروت NFC ذكية
+ORG:Klicko Smart Solutions
+TEL;TYPE=CELL,VOICE:01556760265
+URL:https://www.tiktok.com/@klicko.eg
+NOTE:خدمات NFC ذكية لكروت الشغل والمحلات والشركات
+END:VCARD`;
 
-    <div class="links-wrapper">
-        <a href="tel:01000000000" class="btn btn-call">
-            <i class="fa-solid fa-phone"></i>
-            <span>اتصال تلفوني مباشر</span>
-        </a>
-
-        <a href="https://wa.me/201000000000" target="_blank" class="btn btn-whatsapp">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span>تواصل عبر الواتساب</span>
-        </a>
-
-        <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AGAVU%20STORE%0ATEL%3BTYPE%3DCELL%3A01000000000%0AEND%3AVCARD" class="btn btn-save">
-            <i class="fa-solid fa-address-card"></i>
-            <span>حفظ الرقم في الهاتف</span>
-        </a>
-
-        <a href="https://instagram.com" target="_blank" class="btn btn-instagram">
-            <i class="fa-brands fa-instagram"></i>
-            <span>تابعنا على إنستجرام</span>
-        </a>
-
-        <a href="https://tiktok.com" target="_blank" class="btn btn-tiktok">
-            <i class="fa-brands fa-tiktok"></i>
-            <span>تابعنا على تيك توك</span>
-        </a>
-
-        <a href="https://facebook.com" target="_blank" class="btn btn-facebook">
-            <i class="fa-brands fa-facebook"></i>
-            <span>صفحتنا على فيسبوك</span>
-        </a>
-    </div>
-
-    <div class="footer">
-        <p>POWERED BY NFC CARD</p>
-    </div>
-</div>
-
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.setAttribute('download', 'Klicko_NFC.vcf');
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
 </body>
 </html>
