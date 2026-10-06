@@ -153,8 +153,156 @@
             width: 44px;
             height: 44px;
             border-radius: 14px;
-            display:
-tiktok.com/@klicko.eg" target="_blank" class="btn tiktok">
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        /* Button Custom Styles */
+        .save-card {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border: none;
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.35);
+        }
+
+        .save-card:hover {
+            box-shadow: 0 14px 35px rgba(0, 210, 255, 0.5);
+        }
+
+        .save-card .btn-icon {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .whatsapp .btn-icon { background: #25D366; }
+        .tiktok .btn-icon { background: #000000; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .phone .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
+
+        .arrow-icon {
+            font-size: 14px;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover .arrow-icon {
+            transform: translateX(-5px);
+            color: var(--primary-blue);
+        }
+
+        /* Services Grid */
+        .services-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 22px 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .services-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 14px 10px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #E2E8F0;
+        }
+
+        .service-item i {
+            display: block;
+            font-size: 22px;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .footer span {
+            color: var(--primary-blue);
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header Profile with Custom Logo -->
+        <div class="profile-card">
+            <div class="logo-wrapper">
+                <img src="https://kommodo.ai/i/UrO8HL31Ai9O6aL8VyXR" alt="Klicko Logo" class="logo-img">
+            </div>
+            <h1 class="brand-title">KLICKO</h1>
+            <div class="brand-subtitle">SMART NFC SOLUTIONS</div>
+            <p class="brand-desc">
+                ربط ذكي بلمسة واحدة | كروت NFC للمحلات والشركات، ستاندات أكريليك للمنيو وتقييمات Google، وصفحات هبوط احترافية.
+            </p>
+        </div>
+
+        <!-- Action Links -->
+        <div class="actions-list">
+            
+            <!-- Save Contact Button -->
+            <button class="btn save-card" onclick="downloadVCard()">
+                <div class="btn-content">
+                    <div class="btn-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <span>حفظ الرقم في جهات الاتصال</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon" style="color: #fff;"></i>
+            </button>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/201556760265?text=%D9%87%D9%84%D8%A7%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%8BD%20%D9%83%D8%B1%D9%88%D8%AA%20%D9%88%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D9%80%20NFC" target="_blank" class="btn whatsapp">
+                <div class="btn-content">
+                    <div class="btn-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <span>تواصل معنا على واتساب</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- Direct Call -->
+            <a href="tel:01556760265" class="btn phone">
+                <div class="btn-content">
+                    <div class="btn-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span>اتصال تلفوني مباشر</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@klicko.eg" target="_blank" class="btn tiktok">
                 <div class="btn-content">
                     <div class="btn-icon">
                         <i class="fa-brands fa-tiktok"></i>
@@ -166,16 +314,16 @@ tiktok.com/@klicko.eg" target="_blank" class="btn tiktok">
 
         </div>
 
-        <!-- Services Highlight -->
+        <!-- Services -->
         <div class="services-card">
             <div class="services-title">
                 <i class="fa-solid fa-bolt"></i>
-                <span>خدمات Klicko للمحلات والشركات</span>
+                <span>خدمات Klicko الذكية</span>
             </div>
             <div class="services-grid">
                 <div class="service-item">
                     <i class="fa-solid fa-id-card"></i>
-                    كروت NFC ذكية
+                    كروت NFC
                 </div>
                 <div class="service-item">
                     <i class="fa-solid fa-qrcode"></i>
