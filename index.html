@@ -180,40 +180,6 @@
             gap: 8px;
         }
 
-        /* Portfolio / Showcases */
-        .portfolio-grid {
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        .portfolio-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 12px;
-            text-align: center;
-            transition: all 0.25s ease;
-        }
-
-        .portfolio-card i {
-            font-size: 24px;
-            color: var(--primary-blue);
-            margin-bottom: 6px;
-        }
-
-        .portfolio-card h4 {
-            font-size: 12.5px;
-            color: #FFF;
-            margin-bottom: 3px;
-        }
-
-        .portfolio-card p {
-            font-size: 10px;
-            color: var(--text-muted);
-        }
-
         /* Package Cards Layout */
         .packages-list {
             width: 100%;
@@ -287,6 +253,13 @@
             color: #FFF;
         }
 
+        .pkg-price-tag {
+            font-size: 11px;
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
         .pkg-details {
             font-size: 12px;
             color: var(--text-muted);
@@ -351,7 +324,7 @@
             <h1 class="brand-title">KLICKO</h1>
             <div class="brand-subtitle">SMART NFC SOLUTIONS</div>
             <p class="brand-desc">
-                ربط ذكي بلمسة واحدة | كروت وستاندات NFC للمحلات، المنيو الذكي بتصميم خاص، وتقييمات Google.
+                ربط ذكي بلمسة واحدة | كروت وستاندات NFC للمحلات والشركات، وتصاميم مواقع المنيو والتقييمات.
             </p>
         </div>
 
@@ -392,37 +365,6 @@
 
         </div>
 
-        <!-- Section: Live Showcases / Portfolio -->
-        <div class="section-header">
-            <i class="fa-solid fa-shapes"></i>
-            <span>معرض نماذج وحلول Klicko:</span>
-        </div>
-
-        <div class="portfolio-grid">
-            <div class="portfolio-card">
-                <i class="fa-solid fa-credit-card"></i>
-                <h4>كروت NFC</h4>
-                <p>طباعة فاخرة وشريحة ناعمة</p>
-            </div>
-            <div class="portfolio-card">
-                <i class="fa-solid fa-store"></i>
-                <h4>ستاندات أكريليك</h4>
-                <p>مقاومة للمياه ومثالية للكونتر</p>
-            </div>
-            <div class="portfolio-card">
-                <i class="fa-solid fa-utensils"></i>
-                <h4>المنيو الذكي</h4>
-                <p>عرض محتوى تفاعلي سريع</p>
-            </div>
-            <div class="portfolio-card">
-                <div style="cursor: pointer;" onclick="sendWA('سلام عليكم، عايز أشوف معاينة حية لمنيو ذكي على الموبايل')">
-                    <i class="fa-solid fa-eye" style="color: #25D366;"></i>
-                    <h4 style="color: #25D366;">معاينة حية 🚀</h4>
-                    <p>اضغط لتجربة النموذج</p>
-                </div>
-            </div>
-        </div>
-
         <!-- Packages Section Header -->
         <div class="section-header">
             <i class="fa-solid fa-box-open"></i>
@@ -437,17 +379,20 @@
                 <div class="vip-badge">الأكثر طلباً ⭐</div>
                 <div class="pkg-header">
                     <div class="pkg-icon"><i class="fa-solid fa-crown"></i></div>
-                    <div class="pkg-title">باكيج الهوية الرقمية الكاملة (VIP)</div>
+                    <div>
+                        <div class="pkg-title">باكيج الهوية الرقمية الكاملة (VIP)</div>
+                        <div class="pkg-price-tag">تواصل على الواتساب لمعرفة العروض والخصم</div>
+                    </div>
                 </div>
                 <ul class="pkg-details">
-                    <li>كارت NFC ذكي بتصميم خاص ومستقل لمحلّك/شركتك.</li>
-                    <li>ستاند أكريليك فاخر ومقاوم للمياه للطاولة أو الكونتر.</li>
-                    <li>صفحة هبوط مخصصة تضم المنيو، اللوكيشن، الواتساب، وكل اللينكات.</li>
-                    <li>ربط وبرمجة الشرايح وتحديث البيانات بسهولة في أي وقت.</li>
+                    <li>كارت NFC ذكي مطبوع باسمك ولوجو المحل.</li>
+                    <li>ستاند أكريليك فاخر ومقاوم للمياه للكونتر/الطاولة.</li>
+                    <li>صفحة هبوط مخصصة تضم كافة الروابط والواتساب والمنيو.</li>
+                    <li>برمجة وتحكم كامل في البيانات بأي وقت.</li>
                 </ul>
-                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن باكيج الهوية الكاملة VIP')">
+                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن أسعار وعروض باكيج الهوية الكاملة VIP')">
                     <i class="fa-brands fa-whatsapp"></i>
-                    تواصل لحجز باكيج الـ VIP
+                    استفسر عن سعر باكيج الـ VIP
                 </div>
             </div>
 
@@ -455,48 +400,77 @@
             <div class="pkg-card">
                 <div class="pkg-header">
                     <div class="pkg-icon"><i class="fa-solid fa-qrcode"></i></div>
-                    <div class="pkg-title">منظومة المنيو الذكي (كارت/ستاند + صفحة)</div>
+                    <div>
+                        <div class="pkg-title">منظومة المنيو الذكي (كارت/ستاند + صفحة)</div>
+                        <div class="pkg-price-tag">خصم خاص للمطاعم والكافيهات</div>
+                    </div>
                 </div>
                 <ul class="pkg-details">
                     <li>ستاند أو كارت NFC أكريليك فخم مخصص للطاولات.</li>
-                    <li>تصميم صفحة المنيو بالكامل متناسقة مع ألوان المحل.</li>
-                    <li>عرض وجباتك وأسعارك مع إمكانية التحديث المباشر.</li>
+                    <li>تصميم صفحة منيو تفاعلي وسريع متناسق مع هوية مكانك.</li>
+                    <li>سهولة تحديث الأصناف والأسعار بدون طباعة ورقية.</li>
                 </ul>
-                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن منظومة المنيو الذكي')">
+                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن سعر منظومة المنيو الذكي')">
                     <i class="fa-brands fa-whatsapp"></i>
-                    تواصل لحجز منظومة المنيو
+                    استفسر عن سعر المنيو الذكي
                 </div>
             </div>
 
-            <!-- 3. Google Reviews Stand -->
+            <!-- 3. Web Design & Landing Pages Package -->
+            <div class="pkg-card">
+                <div class="pkg-header">
+                    <div class="pkg-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div>
+                        <div class="pkg-title">تصميم صفحة هبوط / موقع مخصص (Web Design)</div>
+                        <div class="pkg-price-tag">استضافة سريعة وسيرفر مجاناً</div>
+                    </div>
+                </div>
+                <ul class="pkg-details">
+                    <li>تصميم صفحة تعريفية احترافية لنشاطك التجاري.</li>
+                    <li>ربط مباشر بزراير الاتصال والواتساب والسوشيال ميديا.</li>
+                    <li>سريعة ومصممة خصيصاً للظهور بشكل ممتاز على الموبايل.</li>
+                </ul>
+                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن خدمة تصميم المواقع وصفحات الهبوط')">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    استفسر عن سعر تصميم المواقع
+                </div>
+            </div>
+
+            <!-- 4. Google Reviews Stand -->
             <div class="pkg-card">
                 <div class="pkg-header">
                     <div class="pkg-icon"><i class="fa-solid fa-star"></i></div>
-                    <div class="pkg-title">كارت / ستاند تقييمات جوجل (Google Reviews)</div>
+                    <div>
+                        <div class="pkg-title">كارت / ستاند تقييمات جوجل (Google Reviews)</div>
+                        <div class="pkg-price-tag">حل سريع لمضاعفة تقييمات المحل</div>
+                    </div>
                 </div>
                 <ul class="pkg-details">
-                    <li>كارت أو ستاند أكريليك للكونتر لتقييم المحل بلمسة واحدة.</li>
-                    <li>يفتح صفحة التقييم على Google فوراً لمضاعفة تقييماتك.</li>
+                    <li>ستاند أو كارت أكريليك مخصص يوضع عند الكاشير.</li>
+                    <li>يفتح صفحة التقييم المباشر على Google Map بلمسة واحدة.</li>
                 </ul>
-                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن كارت تقييمات جوجل')">
+                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن سعر كارت تقييمات جوجل')">
                     <i class="fa-brands fa-whatsapp"></i>
-                    تواصل لحجز كارت تقييمات جوجل
+                    استفسر عن سعر كارت تقييمات جوجل
                 </div>
             </div>
 
-            <!-- 4. Personal & Business NFC Cards -->
+            <!-- 5. Personal & Business NFC Cards -->
             <div class="pkg-card">
                 <div class="pkg-header">
                     <div class="pkg-icon"><i class="fa-solid fa-id-card"></i></div>
-                    <div class="pkg-title">كروت NFC الذكية (للأفراد والشركات)</div>
+                    <div>
+                        <div class="pkg-title">كروت NFC الذكية (Business Cards)</div>
+                        <div class="pkg-price-tag">أسعار خاصة للكميات والشركات</div>
+                    </div>
                 </div>
                 <ul class="pkg-details">
-                    <li>كارت عمل شخصي أو تجاري مطبوع بطباعة فاخرة باللوجو.</li>
-                    <li>حفظ جهات الاتصال وروابط السوشيال بلمسة واحدة.</li>
+                    <li>كارت شخصي أو تجاري فاخر مطبوع باللوجو والاسم.</li>
+                    <li>مشاركة بيانات الاتصال والروابط الخاصة بك بلمسة واحدة.</li>
                 </ul>
-                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن كروت NFC')">
+                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن أسعار كروت NFC الشخصية والشركات')">
                     <i class="fa-brands fa-whatsapp"></i>
-                    تواصل لحجز كروت NFC
+                    استفسر عن سعر كروت NFC
                 </div>
             </div>
 
@@ -511,14 +485,14 @@
 
     <!-- JavaScript Functions -->
     <script>
-        // إرسال رسائل الواتساب بدون أي رموز مشوهة
+        // إرسال رسائل الواتساب مع النص المخصص
         function sendWA(textMessage) {
             const phone = "201556760265";
             const encodedText = encodeURIComponent(textMessage);
             window.open(`https://wa.me/${phone}?text=${encodedText}`, '_blank');
         }
 
-        // إنشاء وتنزيل كارت جهات الاتصال باسم Klicko والموقع المباشر
+        // حفظ كارت جهات الاتصال باسم Klicko والموقع المباشر
         function downloadVCard() {
             const vcardData = `BEGIN:VCARD
 VERSION:3.0
