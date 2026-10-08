@@ -97,8 +97,36 @@
             color: var(--primary-blue);
             font-weight: 800;
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-transform: uppercase;
+        }
+
+        /* Top Social Media Icons Header */
+        .header-socials {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+
+        .header-socials a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .header-socials a:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
         }
 
         .brand-desc {
@@ -160,6 +188,8 @@
         .btn-save .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
         .btn-wa .btn-icon { background: #25D366; }
         .btn-call .btn-icon { background: linear-gradient(135deg, #00D2FF, #0072FF); }
+        .btn-fb .btn-icon { background: #1877F2; }
+        .btn-ig .btn-icon { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .btn-tiktok .btn-icon { background: #000; border: 1px solid rgba(255,255,255,0.2); }
 
         .arrow-icon {
@@ -323,6 +353,14 @@
             </div>
             <h1 class="brand-title">KLICKO</h1>
             <div class="brand-subtitle">SMART NFC SOLUTIONS</div>
+
+            <!-- Top Header Social Links -->
+            <div class="header-socials">
+                <a href="https://www.facebook.com/share/19fZd77CKG/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/klicko.eg" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@klicko.eg" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+
             <p class="brand-desc">
                 ربط ذكي بلمسة واحدة | كروت وستاندات NFC للمحلات والشركات، وتصاميم مواقع المنيو والتقييمات.
             </p>
@@ -355,10 +393,27 @@
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
             </a>
 
+            <!-- Social Media Buttons -->
+            <a href="https://www.facebook.com/share/19fZd77CKG/" target="_blank" class="btn btn-fb">
+                <div class="btn-content">
+                    <div class="btn-icon"><i class="fa-brands fa-facebook-f"></i></div>
+                    <span>صفحتنا على Facebook</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://www.instagram.com/klicko.eg" target="_blank" class="btn btn-ig">
+                <div class="btn-content">
+                    <div class="btn-icon"><i class="fa-brands fa-instagram"></i></div>
+                    <span>حسابنا على Instagram</span>
+                </div>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
             <a href="https://www.tiktok.com/@klicko.eg" target="_blank" class="btn btn-tiktok">
                 <div class="btn-content">
                     <div class="btn-icon"><i class="fa-brands fa-tiktok"></i></div>
-                    <span>تابع أعمالنا على TikTok</span>
+                    <span>حسابنا على TikTok</span>
                 </div>
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
             </a>
@@ -485,14 +540,14 @@
 
     <!-- JavaScript Functions -->
     <script>
-        // إرسال رسائل الواتساب مع النص المخصص
+        // إرسال رسائل الواتساب بدون أي تشويه في النص
         function sendWA(textMessage) {
             const phone = "201556760265";
             const encodedText = encodeURIComponent(textMessage);
             window.open(`https://wa.me/${phone}?text=${encodedText}`, '_blank');
         }
 
-        // حفظ كارت جهات الاتصال باسم Klicko والموقع المباشر
+        // حفظ كارت جهات الاتصال باسم Klicko ورابط الموقع المباشر
         function downloadVCard() {
             const vcardData = `BEGIN:VCARD
 VERSION:3.0
