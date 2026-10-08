@@ -167,17 +167,51 @@
             color: var(--text-muted);
         }
 
-        /* Packages Section Header */
+        /* Section Header */
         .section-header {
             width: 100%;
             text-align: right;
             font-size: 14px;
             font-weight: 800;
             color: var(--primary-blue);
-            margin-top: 8px;
+            margin-top: 10px;
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+
+        /* Portfolio / Showcases */
+        .portfolio-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .portfolio-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 12px;
+            text-align: center;
+            transition: all 0.25s ease;
+        }
+
+        .portfolio-card i {
+            font-size: 24px;
+            color: var(--primary-blue);
+            margin-bottom: 6px;
+        }
+
+        .portfolio-card h4 {
+            font-size: 12.5px;
+            color: #FFF;
+            margin-bottom: 3px;
+        }
+
+        .portfolio-card p {
+            font-size: 10px;
+            color: var(--text-muted);
         }
 
         /* Package Cards Layout */
@@ -205,7 +239,13 @@
         .pkg-card.vip-card {
             border: 1.5px solid var(--primary-blue);
             background: linear-gradient(180deg, rgba(0, 210, 255, 0.08) 0%, rgba(15, 23, 42, 0.9) 100%);
-            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.25);
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 15px rgba(0, 210, 255, 0.2); }
+            100% { box-shadow: 0 0 25px rgba(0, 210, 255, 0.45); }
         }
 
         .vip-badge {
@@ -219,11 +259,6 @@
             padding: 3px 10px;
             border-radius: 10px;
             letter-spacing: 0.5px;
-        }
-
-        .pkg-card:hover {
-            border-color: var(--primary-blue);
-            transform: translateY(-3px);
         }
 
         .pkg-header {
@@ -287,6 +322,7 @@
             justify-content: center;
             gap: 8px;
             box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+            cursor: pointer;
         }
 
         /* Footer */
@@ -330,13 +366,13 @@
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
             </button>
 
-            <a href="https://wa.me/201556760265?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%8BD8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85" target="_blank" class="btn btn-wa">
+            <button class="btn btn-wa" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن خدماتكم الرقمية')">
                 <div class="btn-content">
                     <div class="btn-icon"><i class="fa-brands fa-whatsapp"></i></div>
                     <span>تواصل مباشر على الواتساب</span>
                 </div>
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
-            </a>
+            </button>
 
             <a href="tel:01556760265" class="btn btn-call">
                 <div class="btn-content">
@@ -354,6 +390,37 @@
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
             </a>
 
+        </div>
+
+        <!-- Section: Live Showcases / Portfolio -->
+        <div class="section-header">
+            <i class="fa-solid fa-shapes"></i>
+            <span>معرض نماذج وحلول Klicko:</span>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <i class="fa-solid fa-credit-card"></i>
+                <h4>كروت NFC</h4>
+                <p>طباعة فاخرة وشريحة ناعمة</p>
+            </div>
+            <div class="portfolio-card">
+                <i class="fa-solid fa-store"></i>
+                <h4>ستاندات أكريليك</h4>
+                <p>مقاومة للمياه ومثالية للكونتر</p>
+            </div>
+            <div class="portfolio-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h4>المنيو الذكي</h4>
+                <p>عرض محتوى تفاعلي سريع</p>
+            </div>
+            <div class="portfolio-card">
+                <div style="cursor: pointer;" onclick="sendWA('سلام عليكم، عايز أشوف معاينة حية لمنيو ذكي على الموبايل')">
+                    <i class="fa-solid fa-eye" style="color: #25D366;"></i>
+                    <h4 style="color: #25D366;">معاينة حية 🚀</h4>
+                    <p>اضغط لتجربة النموذج</p>
+                </div>
+            </div>
         </div>
 
         <!-- Packages Section Header -->
@@ -378,10 +445,10 @@
                     <li>صفحة هبوط مخصصة تضم المنيو، اللوكيشن، الواتساب، وكل اللينكات.</li>
                     <li>ربط وبرمجة الشرايح وتحديث البيانات بسهولة في أي وقت.</li>
                 </ul>
-                <a href="https://wa.me/201556760265?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%A7%D9%83%D9%8A%D8%AC%20%D8%A7%D9%84%D9%87%D9%88%D9%8A%D8%A9%20%D8%A7%D9%84%D9%83%D8%A7%D9%85%D9%84%D8%A9" target="_blank" class="pkg-btn">
+                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن باكيج الهوية الكاملة VIP')">
                     <i class="fa-brands fa-whatsapp"></i>
                     تواصل لحجز باكيج الـ VIP
-                </a>
+                </div>
             </div>
 
             <!-- 2. Smart Menu System -->
@@ -395,10 +462,10 @@
                     <li>تصميم صفحة المنيو بالكامل متناسقة مع ألوان المحل.</li>
                     <li>عرض وجباتك وأسعارك مع إمكانية التحديث المباشر.</li>
                 </ul>
-                <a href="https://wa.me/201556760265?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%8A%D9%88%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A" target="_blank" class="pkg-btn">
+                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن منظومة المنيو الذكي')">
                     <i class="fa-brands fa-whatsapp"></i>
                     تواصل لحجز منظومة المنيو
-                </a>
+                </div>
             </div>
 
             <!-- 3. Google Reviews Stand -->
@@ -411,10 +478,10 @@
                     <li>كارت أو ستاند أكريليك للكونتر لتقييم المحل بلمسة واحدة.</li>
                     <li>يفتح صفحة التقييم على Google فوراً لمضاعفة تقييماتك.</li>
                 </ul>
-                <a href="https://wa.me/201556760265?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%83%D8%A7%D8%B1%D8%AA%20%D8%AA%D9%82%D9%8A%D9%8A%D9%85%D8%A7%D8%AA%20%D8%AC%D9%88%D8%AC%D9%84" target="_blank" class="pkg-btn">
+                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن كارت تقييمات جوجل')">
                     <i class="fa-brands fa-whatsapp"></i>
                     تواصل لحجز كارت تقييمات جوجل
-                </a>
+                </div>
             </div>
 
             <!-- 4. Personal & Business NFC Cards -->
@@ -427,10 +494,10 @@
                     <li>كارت عمل شخصي أو تجاري مطبوع بطباعة فاخرة باللوجو.</li>
                     <li>حفظ جهات الاتصال وروابط السوشيال بلمسة واحدة.</li>
                 </ul>
-                <a href="https://wa.me/201556760265?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Klicko%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%83%D8%B1%D9%88%D8%AA%20NFC" target="_blank" class="pkg-btn">
+                <div class="pkg-btn" onclick="sendWA('سلام عليكم Klicko، عايز استفسر عن كروت NFC')">
                     <i class="fa-brands fa-whatsapp"></i>
                     تواصل لحجز كروت NFC
-                </a>
+                </div>
             </div>
 
         </div>
@@ -442,15 +509,23 @@
 
     </div>
 
-    <!-- Script for VCard Generation -->
+    <!-- JavaScript Functions -->
     <script>
+        // إرسال رسائل الواتساب بدون أي رموز مشوهة
+        function sendWA(textMessage) {
+            const phone = "201556760265";
+            const encodedText = encodeURIComponent(textMessage);
+            window.open(`https://wa.me/${phone}?text=${encodedText}`, '_blank');
+        }
+
+        // إنشاء وتنزيل كارت جهات الاتصال باسم Klicko والموقع المباشر
         function downloadVCard() {
             const vcardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Klicko | كروت NFC والمنيو الذكي
+FN:Klicko | كليكو
 ORG:Klicko Smart Solutions
 TEL;TYPE=CELL,VOICE:01556760265
-URL:https://www.tiktok.com/@klicko.eg
+URL:https://klicko-eg.github.io/1/
 NOTE:خدمات NFC والمنيو الذكي لكروت الشغل والمحلات والشركات
 END:VCARD`;
 
